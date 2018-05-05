@@ -18,6 +18,7 @@ bool RequestHandler::GetResponse(std::string * Response) {
 
     Body->append("<html>\n<body>\n<h1>Hello, World!</h1>\n</body>\n</html>") ;
 
+
     Response->append( Header->c_str() );
     Response->append( Body->c_str() );
 
