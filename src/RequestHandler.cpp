@@ -7,16 +7,16 @@ bool RequestHandler::GetResponse(std::string * Response) {
     std::string * Header = new std::string() ;
     std::string * Body = new std::string() ;
 
+    Body->append("<html>\n<body>\n<h1>Hello, World!</h1>\n</body>\n</html>") ;
+
     //Send some messages to the client
     Header->append("HTTP/1.1 200 OK\n") ;
     Header->append("Date: Mon, 27 Jul 2009 12:28:53 GMT\n");
     Header->append("Server: Apache/2.2.14 (Win32)\n") ;
     Header->append("Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT\n") ;
-    Header->append("Content-Length: 52\n") ;
+    Header->append("Content-Length: " + std::to_string(Body->size()) + "\n") ;
     Header->append("Content-Type: text/html\n") ; 
     Header->append("Connection: Closed\n\n") ;
-
-    Body->append("<html>\n<body>\n<h1>Hello, World!</h1>\n</body>\n</html>") ;
 
 
     Response->append( Header->c_str() );
