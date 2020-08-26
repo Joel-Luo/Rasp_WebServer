@@ -1,2 +1,2 @@
-# Simple Web server 
+# Simple Web Server 
   A Simple Web server.  
